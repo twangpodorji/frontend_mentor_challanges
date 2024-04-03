@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Calculator</title>
+</head>
+<body>
+     <h1>Simple Calculator</h1>
+     <!-- Creating the two element values where the user can put the values -->
+     <p>Val 1</p>
+     <input type="number" id="value1" placeholder="Enter the first value"><br><br>
+     <p>Val 2</p>
+     <input type="number" id="value2" placeholder="Enter the second value"><br><br
+
+     <-- Creating the buttons for the calculation -->
+     
+     <button id="add">Add</button>
+     <button id="sub">Subtract</button>
+     <button id="mul">Multiply</button>
+     <button id="div">Divide</button>
+
+     <!-- Creating the result element -->
+     <h2>Result</h2>
+     <p id="result">0</p>
+
+     <!-- creating a function where the addtition takes place -->
+     <script>
+          // 1. Sellecting the buttons for the calculation by its id
+          const addButton = document.getElementById('add');
+          const subButton = document.getElementById('sub');
+          const mulButton = document.getElementById('mul');
+          const divButton = document.getElementById('div');
+
+          // 2. Listen for a click event on the buttons and call the function add, sub, mul, div
+          addButton.addEventListener('click', add);
+          subButton.addEventListener('click', sub);
+          mulButton.addEventListener('click', mul);
+          divButton.addEventListener('click', div);
+
+          // 2. Select the input values by its id
+          const value1 = document.getElementById('value1');
+          const value2 = document.getElementById('value2');
+
+          // 3. Select the result element by its id
+          const result = document.getElementById('result');
+
+          // 4. Create a function that adds the two values as the user puts the values and click the add button
+          function add() {
+               // 5. Get the value of the two input values
+               const val1 = value1.value;
+               const val2 = value2.value;
+               // 6. Add the two values
+               const sum = parseInt(val1) + parseInt(val2);
+               // 7. Display the result
+               result.textContent = sum;
+          }
+
+          function sub() {
+               // 5. Get the value of the two input values
+               const val1 = value1.value;
+               const val2 = value2.value;
+               // 6. Add the two values
+               const sum = parseInt(val1) - parseInt(val2);
+               // 7. Display the result
+               result.textContent = sum;
+
+          }
+          function mul() {
+               // 5. Get the value of the two input values
+               const val1 = value1.value;
+               const val2 = value2.value;
+
+               // 6. Add the two values
+               const sum = parseInt(val1) * parseInt(val2);
+
+               // 7. Displaying the result
+               result.textContent = sum;
+          }
+
+          function div() {
+               // 5. Get the value of the two input values
+               const val1 = value1.value;
+               const val2 = value2.value;
+
+               // 6. Add the two values
+               const sum = parseInt(val1) / parseInt(val2);
+
+               // 7. Displaying the result
+               result.textContent = sum;
+          } 
+          </script>
+</body>
+</html>
