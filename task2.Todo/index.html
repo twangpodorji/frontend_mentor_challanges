@@ -9,5 +9,32 @@
      <!-- creating a Name text and making input form the and creating a add button  -->
      <p> Name: <input type="text" id="name" placeholder="Enter any name"></p><br><br> 
      <button id="add">Add</button>
+     <button id="delete">Delete</button>
+     <script>
+          // using the web-components to create a custom element and implementation of the TODO list
+          const addbutton = document.getElementById('add');
+          const deletebutton = document.getElementById('delete');
+
+          // adding the eventlistener to the add button 
+          // adding the eventlistener to the delete button
+          // when the add button is clicked, add the name to the list 
+          // when the delete button is clicked, delete the name from the list 
+          addbutton.addEventListener('click', addName);
+          deletebutton.addEventListener('click', deleteName);
+
+          // creating a function to add the name to the list
+          function addName() {
+               const name = document.getElementById('name').value;
+               const list = document.createElement('li');
+               list.textContent = name;
+               document.body.appendChild(list);
+          }
+          // creating a function to delete the name from the list and deleting the last child
+          function deleteName() {
+               const list = document.querySelector('li');
+               document.body.removeChild(list);
+          }
+          
+     </script>
 </body>
-</html>
+</html> 
